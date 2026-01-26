@@ -34,10 +34,10 @@ const Hero = () => {
                 />
             </motion.h2>
             <p className="mt-6 max-w-xl text-gray-600 text-lg md:text-xl">
-                I am a junior MERN Stack developer from Bangladesh specializing in building responsive,
-                modern, and user-friendly web applications using React, Tailwind CSS, and MongoDB.
-                I focus on clean code and scalable design, ready to contribute to real-world projects.
+                I’m a junior MERN Stack developer passionate about building
+                <strong> responsive, modern web applications</strong> and delivering clean, maintainable code.
             </p>
+
 
 
             {/*scroll down hint */}
