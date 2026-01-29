@@ -2,6 +2,7 @@ import AboutMe from "./AboutMe";
 import Contact from "./Contact";
 import Hero from "./Hero";
 import Projects from "./Projects";
+import ScrollToTop from "./ScrollToTop";
 import Skills from "./Skills";
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
       <Skills></Skills>
       <Projects></Projects>
       <Contact></Contact>
+      <ScrollToTop></ScrollToTop>
     </div>
   );
 };

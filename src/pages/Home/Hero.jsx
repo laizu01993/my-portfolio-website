@@ -44,12 +44,19 @@ dark:from-gray-900 dark:to-gray-800">
 
             {/*scroll down hint */}
             <motion.div
-                className="mt-12 text-gray-500"
+                className="mt-12 text-gray-500 cursor-pointer"
                 animate={{ y: [0, 10, 0] }}
                 transition={{ repeat: Infinity, duration: 1.5 }}
+                onClick={() => {
+                    const aboutSection = document.getElementById("aboutMe");
+                    if (aboutSection) {
+                        aboutSection.scrollIntoView({ behavior: "smooth" });
+                    }
+                }}
             >
                 ⬇ Scroll Down
             </motion.div>
+
         </section>
     );
 };
