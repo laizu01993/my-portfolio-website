@@ -136,7 +136,7 @@ const Projects = () => {
     return (
         <section
             id="projects"
-            className="py-24 bg-gradient-to-b from-indigo-50 to-white"
+            className="py-24 bg-gradient-to-b from-indigo-50 to-white  dark:from-gray-900 dark:to-gray-800"
         >
             <div className="max-w-6xl mx-auto px-4">
 
@@ -148,10 +148,10 @@ const Projects = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-gray-300">
                         Projects
                     </h2>
-                    <p className="text-gray-600 max-w-xl mx-auto">
+                    <p className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
                         Some of the projects I’ve built while learning and practicing
                         full-stack web development.
                     </p>
@@ -186,7 +186,7 @@ const Projects = () => {
                                     {project.tech.map((item, i) => (
                                         <span
                                             key={i}
-                                            className="text-sm bg-indigo-100 text-indigo-600
+                                            className="text-sm bg-indigo-100  text-indigo-600
                                  px-3 py-1 rounded-full"
                                         >
                                             {item}

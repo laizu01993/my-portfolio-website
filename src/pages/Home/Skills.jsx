@@ -29,7 +29,7 @@ const Skills = () => {
     return (
         <section
             id="skills"
-            className="py-24 bg-gradient-to-b from-white to-indigo-50"
+            className="py-24 bg-gradient-to-b from-white to-indigo-50  dark:from-gray-900 dark:to-gray-800"
         >
             <div className="max-w-6xl mx-auto px-4">
 
@@ -41,10 +41,10 @@ const Skills = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-gray-300">
                         Skills & Technologies
                     </h2>
-                    <p className="text-gray-600 max-w-xl mx-auto">
+                    <p className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
                         Technologies I use to build fast, scalable, and
                         user-focused web applications.
                     </p>

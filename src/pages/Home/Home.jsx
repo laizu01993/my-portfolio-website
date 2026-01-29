@@ -6,12 +6,12 @@ import Skills from "./Skills";
 
 const Home = () => {
   return (
-    <div>
-        <Hero></Hero>
-        <AboutMe></AboutMe>
-        <Skills></Skills>
-        <Projects></Projects>
-        <Contact></Contact>
+    <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
+      <Hero></Hero>
+      <AboutMe></AboutMe>
+      <Skills></Skills>
+      <Projects></Projects>
+      <Contact></Contact>
     </div>
   );
 };

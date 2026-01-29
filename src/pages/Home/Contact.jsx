@@ -10,14 +10,14 @@ const Contact = () => {
     return (
         <section
             id="contact"
-            className="min-h-screen flex flex-col justify-center items-center text-center px-4 md:px-20 bg-gradient-to-b from-indigo-100 to-white"
+            className="min-h-screen flex flex-col justify-center items-center text-center px-4 md:px-20 bg-gradient-to-b from-indigo-100 to-white  dark:from-gray-900 dark:to-gray-800"
         >
             {/* Section Title */}
             <motion.h2
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 2, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-4xl md:text-5xl font-bold text-gray-800 mb-10"
+                className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-300 mb-10"
             >
                 Get <span className="text-indigo-500">In Touch</span>
             </motion.h2>
@@ -68,10 +68,10 @@ const Contact = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                className="flex gap-6 text-gray-700 text-3xl"
+                className="flex gap-6 text-gray-700 dark:text-gray-300 text-3xl"
             >
                 <a href="https://github.com/laizu01993" target="_blank" rel="noopener noreferrer">
-                    <FaGithub className="hover:text-gray-900 transition-colors duration-300" />
+                    <FaGithub className="hover:text-gray-900 dark:hover:text-gray-300 transition-colors duration-300" />
                 </a>
                 <a href="https://linkedin.com/in/shahanara" target="_blank" rel="noopener noreferrer">
                     <FaLinkedin className="hover:text-blue-700 transition-colors duration-300" />

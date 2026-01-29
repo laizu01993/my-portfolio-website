@@ -3,14 +3,16 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
     return (
-        <section className="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-indigo-200 to-white">
+        <section className="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b 
+from-indigo-200 to-white
+dark:from-gray-900 dark:to-gray-800">
 
             {/* Animated intro with Framer Motion */}
             <motion.h1
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1 }}
-                className="text-4xl md:text-6xl font-bold mb-6"
+                className="text-4xl dark:text-gray-300 md:text-6xl font-bold mb-6"
             >
                 Hi, I’m Shahanara Aktar
             </motion.h1>
@@ -20,7 +22,7 @@ const Hero = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 1 }}
-                className="text-2xl md:text-2xl font-medium text-gray-700"
+                className="text-2xl md:text-2xl font-medium text-gray-700 dark:text-gray-300"
             >
                 <Typewriter
                     words={["React Developer", "Frontend Developer", "MERN Stack Developer", "Passionate About Clean Code",
@@ -33,7 +35,7 @@ const Hero = () => {
                     delaySpeed={1000}
                 />
             </motion.h2>
-            <p className="mt-6 max-w-xl text-gray-600 text-lg md:text-xl">
+            <p className="mt-6 max-w-xl text-gray-600 dark:text-gray-300 text-lg md:text-xl">
                 I’m a junior MERN Stack developer passionate about building
                 <strong> responsive, modern web applications</strong> and delivering clean, maintainable code.
             </p>

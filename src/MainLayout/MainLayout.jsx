@@ -1,10 +1,11 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
-const MainLayout = () => {
+const MainLayout = ({darkMode, setDarkMode}) => {
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar darkMode={darkMode}
+      setDarkMode={setDarkMode}></Navbar>
       <Outlet />
       {/* Footer here */}
     </div>
