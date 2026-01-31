@@ -1,11 +1,10 @@
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
-
 const Hero = () => {
     return (
-        <section className="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b 
-from-indigo-200 to-white
-dark:from-gray-900 dark:to-gray-800">
+        <section id="hero" className="min-h-[60vh] pt-24 flex flex-col justify-center items-center text-center bg-gradient-to-b
+             from-indigo-200 to-white
+             dark:from-gray-900 dark:to-gray-800">
 
             {/* Animated intro with Framer Motion */}
             <motion.h1

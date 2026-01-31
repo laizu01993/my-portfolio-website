@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const AboutMe = () => {
     return (
-        <section id="aboutMe" className="flex flex-col justify-center items-center text-center px-4 md:px-20 bg-gradient-to-b from-white to-indigo-100  dark:from-gray-900 dark:to-gray-800">
+        <section id="aboutMe" className="flex flex-col justify-center items-center text-center px-4 md:px-20 bg-gradient-to-b from-white to-indigo-100  dark:from-gray-900 dark:to-gray-800 ">
 
             {/* Section Title */}
             <motion.h2

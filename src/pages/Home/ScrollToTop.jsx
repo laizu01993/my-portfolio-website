@@ -6,10 +6,20 @@ const ScrollToTop = () => {
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => setVisible(window.scrollY > 300); // show after scrolling 300px
+        const handleScroll = () => {
+            const hero = document.getElementById("hero");
+            if (!hero) return;
+
+            const heroBottom = hero.getBoundingClientRect().bottom;
+
+            // Button shows only when hero is fully out of view
+            setVisible(heroBottom < 0);
+        };
+
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
