@@ -40,6 +40,7 @@ const projects = [
             "Order history tracking",
             "Admin menu & user management",
             "Protected routes",
+            "Stripe payment integration"
         ],
         tech: [
             "React",
@@ -131,16 +132,14 @@ const projects = [
     },
 ];
 
-
 const Projects = () => {
     return (
         <section
             id="projects"
-            className="py-24 bg-gradient-to-b from-indigo-50 to-white  dark:from-gray-900 dark:to-gray-800"
+            className="py-16 bg-linear-to-b from-indigo-50 to-white dark:from-gray-900 dark:to-gray-800"
         >
             <div className="max-w-6xl mx-auto px-4">
-
-                {/* Title */}
+                {/* Section Title */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -151,7 +150,7 @@ const Projects = () => {
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-gray-300">
                         Projects
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
+                    <p className="text-gray-950 dark:text-gray-300 max-w-xl mx-auto">
                         Some of the projects I’ve built while learning and practicing
                         full-stack web development.
                     </p>
@@ -166,28 +165,26 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white rounded-2xl shadow-md
-                         hover:shadow-xl transition-all duration-300
-                         overflow-hidden"
+                            className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden"
                         >
-
-                            {/* Content */}
                             <div className="p-6">
-                                <h3 className="text-xl font-semibold mb-2">
-                                    {project.title}
-                                </h3>
+                                <h3 className="text-xl font-semibold dark:text-white mb-2">{project.title}</h3>
+                                <p className="text-gray-950 dark:text-gray-300 mb-4">{project.description}</p>
 
-                                <p className="text-gray-600 mb-4">
-                                    {project.description}
-                                </p>
+                                {/* Features list */}
+                                <ul className="list-disc list-inside mb-4 text-gray-800 dark:text-gray-300 text-sm">
+                                    {project.features.map((feature, i) => (
+                                        <li key={i}>{feature}</li>
+                                    ))}
+                                </ul>
 
                                 {/* Tech Stack */}
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {project.tech.map((item, i) => (
                                         <span
                                             key={i}
-                                            className="text-sm bg-indigo-100  text-indigo-600
-                                 px-3 py-1 rounded-full"
+                                            className="text-sm bg-indigo-100 dark:bg-indigo-700/50 text-indigo-600 dark:text-indigo-200
+                                 px-3 py-1 rounded-full hover:bg-indigo-200 dark:hover:bg-indigo-600 transition"
                                         >
                                             {item}
                                         </span>
@@ -199,16 +196,16 @@ const Projects = () => {
                                     <a
                                         href={project.github}
                                         target="_blank"
-                                        className="flex items-center gap-2 text-gray-700
-                               hover:text-black font-medium"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-black dark:hover:text-white font-medium"
                                     >
                                         <FaGithub /> Code
                                     </a>
                                     <a
                                         href={project.live}
                                         target="_blank"
-                                        className="flex items-center gap-2 text-indigo-600
-                               hover:text-indigo-800 font-medium"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 text-indigo-600 dark:text-indigo-300 hover:text-indigo-800 dark:hover:text-indigo-100 font-medium"
                                     >
                                         <FaExternalLinkAlt /> Live
                                     </a>

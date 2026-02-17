@@ -6,45 +6,8 @@ import Projects from "./Projects";
 import ScrollToTop from "./ScrollToTop";
 import Skills from "./Skills";
 import { FiDownload } from "react-icons/fi";
+import { motion } from "framer-motion";
 
-// const Home = () => {
-//   return (
-//     <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
-//       <Hero></Hero>
-
-//       {/* Download Resume Button */}
-//       <div className="flex justify-center my-12 mb-6">
-//         <a
-//           href="/resume.pdf"
-//           download
-//           className="px-6 py-3 text-2xl font-semibold bg-indigo-500 text-white rounded-lg shadow-md hover:bg-indigo-600 hover:scale-105 transform transition duration-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 flex items-center gap-2"
-//         >
-//           <FiDownload></FiDownload>Download Resume
-//         </a>
-//       </div>
-//       <div className="flex text-center justify-center mb-14 gap-6 text-4xl">
-//         <div className="">
-//           <a href="https://github.com/laizu01993" target="_blank" rel="noopener noreferrer">
-//             <FaGithub className="hover:text-gray-900 dark:hover:text-gray-300 transition-colors duration-300" />
-//           </a>
-//         </div>
-//         <div>
-//           <a href="https://linkedin.com/in/shahanara" target="_blank" rel="noopener noreferrer">
-//             <FaLinkedin className="hover:text-blue-700 transition-colors duration-300" />
-//           </a>
-//         </div>
-//       </div>
-
-//       <AboutMe></AboutMe>
-//       <Skills></Skills>
-//       <Projects></Projects>
-//       <Contact></Contact>
-//       <ScrollToTop></ScrollToTop>
-//     </div>
-//   );
-// };
-
-// export default Home;
 
 const Home = () => {
 
@@ -60,41 +23,95 @@ const Home = () => {
   };
 
   return (
+    // <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
+    //   <Hero />
+
+    //   Download Resume Button
+    //   <div className="flex justify-center my-12 mb-6">
+    //     <button
+    //       onClick={handleResumeDownload}
+    //       className="px-6 py-3 text-2xl font-semibold bg-indigo-500 text-white rounded-lg shadow-md 
+    //       hover:bg-indigo-600 hover:scale-105 transform transition duration-300 
+    //       dark:bg-indigo-600 dark:hover:bg-indigo-700 flex items-center gap-2"
+    //     >
+    //       <FiDownload />
+    //       Download Resume
+    //     </button>
+    //   </div>
+
+    //   {/* Social Links */}
+    //   <div className="flex justify-center mb-14 gap-6 text-4xl">
+    //     <a
+    //       href="https://github.com/laizu01993"
+    //       target="_blank"
+    //       rel="noopener noreferrer"
+    //     >
+    //       <FaGithub className="hover:text-gray-900 dark:hover:text-gray-300 transition-colors duration-300" />
+    //     </a>
+
+    //     <a
+    //       href="https://linkedin.com/in/shahanara"
+    //       target="_blank"
+    //       rel="noopener noreferrer"
+    //     >
+    //       <FaLinkedin className="hover:text-blue-700 transition-colors duration-300" />
+    //     </a>
+    //   </div>
+
+    //   <AboutMe />
+    //   <Skills />
+    //   <Projects />
+    //   <Contact />
+    //   <ScrollToTop />
+    // </div>
     <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
+      {/* Hero Section */}
       <Hero />
 
-      {/* Download Resume Button */}
-      <div className="flex justify-center my-12 mb-6">
-        <button
+      {/* Download Resume & Social Links */}
+      <div className="flex flex-col items-center gap-8 mt-12 mb-16">
+        {/* Download Resume Button */}
+        <motion.button
           onClick={handleResumeDownload}
-          className="px-6 py-3 text-2xl font-semibold bg-indigo-500 text-white rounded-lg shadow-md 
-          hover:bg-indigo-600 hover:scale-105 transform transition duration-300 
-          dark:bg-indigo-600 dark:hover:bg-indigo-700 flex items-center gap-2"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="
+            flex items-center gap-3 px-8 py-4
+            bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500
+            text-white text-xl md:text-2xl font-semibold
+            rounded-full shadow-lg
+            hover:shadow-2xl
+            transform transition duration-300
+            focus:outline-none focus:ring-4 focus:ring-indigo-300
+            dark:focus:ring-indigo-600
+          "
         >
-          <FiDownload />
+          <FiDownload className="text-2xl md:text-3xl animate-bounce" />
           Download Resume
-        </button>
+        </motion.button>
+
+        {/* Social Links */}
+        <div className="flex gap-8 text-4xl md:text-5xl mt-4">
+          <a
+            href="https://github.com/laizu01993"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors duration-300 transform hover:-translate-y-1"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://linkedin.com/in/shahanara"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300 transform hover:-translate-y-1"
+          >
+            <FaLinkedin />
+          </a>
+        </div>
       </div>
 
-      {/* Social Links */}
-      <div className="flex justify-center mb-14 gap-6 text-4xl">
-        <a
-          href="https://github.com/laizu01993"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaGithub className="hover:text-gray-900 dark:hover:text-gray-300 transition-colors duration-300" />
-        </a>
-
-        <a
-          href="https://linkedin.com/in/shahanara"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaLinkedin className="hover:text-blue-700 transition-colors duration-300" />
-        </a>
-      </div>
-
+      {/* Other Sections */}
       <AboutMe />
       <Skills />
       <Projects />
