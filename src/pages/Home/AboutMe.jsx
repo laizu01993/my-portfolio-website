@@ -20,7 +20,7 @@ const AboutMe = () => {
         <section
             id="aboutMe"
             className="flex flex-col justify-center items-center text-center px-6 md:px-24 py-20
-        bg-gradient-to-b from-white to-indigo-100 dark:from-gray-900 dark:to-gray-800"
+        bg-linear-to-b from-white to-indigo-100 dark:from-gray-900 dark:to-gray-800"
         >
             {/* Section Title */}
             <motion.h2
@@ -50,7 +50,7 @@ const AboutMe = () => {
                 that provide smooth and engaging user experiences.
                 <br /><br />
                 My goal is to contribute to impactful projects, continuously learn new technologies, and deliver{' '}
-                <strong className="text-indigo-600">real value</strong> to users and businesses.
+                <strong className="text-indigo-600 dark:text-indigo-500">real value</strong> to users and businesses.
             </motion.p>
 
             {/* Tech Stack Badges */}
@@ -64,7 +64,7 @@ const AboutMe = () => {
                     <motion.span
                         key={index}
                         whileHover={{ scale: 1.1, y: -2 }}
-                        className="px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-300 font-semibold text-sm md:text-base cursor-default shadow-md hover:shadow-lg transition-all duration-300"
+                        className="px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-200 font-semibold text-sm md:text-base cursor-default shadow-md hover:shadow-lg transition-all duration-300"
                     >
                         &lt;{tech} /&gt;
                     </motion.span>

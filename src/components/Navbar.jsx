@@ -1,90 +1,3 @@
-// import { useState, useEffect } from "react";
-// import { NavLink } from "react-router-dom";
-// import { AnimatePresence, motion } from "framer-motion";
-// import { FaSun, FaMoon } from "react-icons/fa";
-// import { TiThMenu } from "react-icons/ti";
-
-// const Navbar = ({ darkMode, setDarkMode }) => {
-//     const [open, setOpen] = useState(false);
-//     const [scrolled, setScrolled] = useState(false);
-
-//     // scroll effect
-//     useEffect(() => {
-//         const handleScroll = () => setScrolled(window.scrollY > 20);
-//         window.addEventListener("scroll", handleScroll);
-//         return () => window.removeEventListener("scroll", handleScroll);
-//     }, []);
-
-//     const navLinks = (
-//         <>
-//             <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
-//             <a href="#aboutMe" onClick={() => setOpen(false)}>About</a>
-//             <a href="#skills" onClick={() => setOpen(false)}>Skills</a>
-//             <a href="#projects" onClick={() => setOpen(false)}>Projects</a>
-//             <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
-
-//         </>
-//     );
-
-//     return (
-//         <nav className={`fixed top-0 w-full z-50 transition-all duration-300
-//       ${scrolled ? "bg-white/70 dark:bg-gray-900/80 shadow-md backdrop-blur-md" : "bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm"}
-//     `}>
-//             <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-//                 {/* Logo */}
-//                 <h1 className="text-xl font-bold text-gray-800 dark:text-gray-200">
-//                     Shahanara <span className="text-indigo-500">Aktar</span>
-//                 </h1>
-
-//                 {/* Desktop Menu */}
-//                 <div className="hidden md:flex items-center gap-6 text-gray-700 dark:text-gray-200 font-medium">
-//                     {navLinks}
-
-//                     {/* Dark/Light Toggle */}
-//                     <button
-//                         onClick={() => setDarkMode(!darkMode)}
-//                         className="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-yellow-400 transition"
-//                     >
-//                         {darkMode ? <FaSun /> : <FaMoon />}
-//                     </button>
-//                 </div>
-
-//                 {/* Mobile Hamburger */}
-//                 <button
-//                     className="md:hidden text-2xl text-gray-700 dark:text-gray-200 border rounded-md p-1"
-//                     onClick={() => setOpen(!open)}
-//                 >
-//                     {open ? "✕" : <TiThMenu />}
-//                 </button>
-//             </div>
-
-//             {/* Mobile Menu */}
-//             <AnimatePresence>
-//                 {open && (
-//                     <motion.div
-//                         initial={{ y: -20, opacity: 0, scale: 0.95 }}
-//                         animate={{ y: 0, opacity: 1, scale: 1 }}
-//                         exit={{ y: -20, opacity: 0, scale: 0.95 }}
-//                         transition={{ duration: 0.25 }}
-//                         className="md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg flex flex-col items-center gap-4 py-6 font-medium text-gray-800 dark:text-gray-200"
-//                     >
-//                         {navLinks}
-
-//                         {/* Dark/Light Toggle Mobile */}
-//                         <button
-//                             onClick={() => setDarkMode(!darkMode)}
-//                             className="mt-2 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-yellow-400 transition"
-//                         >
-//                             {darkMode ? <FaSun /> : <FaMoon />}
-//                         </button>
-//                     </motion.div>
-//                 )}
-//             </AnimatePresence>
-//         </nav>
-//     );
-// };
-
-// export default Navbar;
 
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -98,27 +11,20 @@ const Navbar = ({ darkMode, setDarkMode }) => {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState("home");
 
-    // Scroll effect + scrollspy
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
-
             sections.forEach((section) => {
-                const element = document.getElementById(section);
-                if (element) {
-                    const offsetTop = element.offsetTop - 120;
-                    const offsetHeight = element.offsetHeight;
-
-                    if (
-                        window.scrollY >= offsetTop &&
-                        window.scrollY < offsetTop + offsetHeight
-                    ) {
+                const el = document.getElementById(section);
+                if (el) {
+                    const offsetTop = el.offsetTop - 120;
+                    const offsetHeight = el.offsetHeight;
+                    if (window.scrollY >= offsetTop && window.scrollY < offsetTop + offsetHeight) {
                         setActiveSection(section);
                     }
                 }
             });
         };
-
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
@@ -148,9 +54,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                                 : section === "aboutMe"
                                     ? "About"
                                     : section.charAt(0).toUpperCase() + section.slice(1);
-
                         const isActive = activeSection === section;
-
                         return (
                             <a
                                 key={section}
@@ -161,34 +65,63 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                                     }`}
                             >
                                 {label}
-
-                                {/* Premium Underline */}
                                 <span
-                                    className={`absolute left-0 -bottom-1 h-[2px] w-full bg-indigo-500 origin-left transition-transform duration-300 ${isActive
-                                            ? "scale-x-100"
-                                            : "scale-x-0 hover:scale-x-100"
+                                    className={`absolute left-0 -bottom-1 h-0.5 w-full bg-indigo-500 origin-left transition-transform duration-300 ${isActive ? "scale-x-100" : "scale-x-0 hover:scale-x-100"
                                         }`}
                                 />
                             </a>
                         );
                     })}
 
-                    {/* Dark Mode Toggle */}
-                    <button
+                    {/* Animated Dark Mode Toggle for Desktop */}
+                    <motion.button
                         onClick={() => setDarkMode(!darkMode)}
-                        className="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-yellow-400 transition"
+                        className="ml-4 relative w-14 h-7 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center p-1 cursor-pointer"
+                        layout
                     >
-                        {darkMode ? <FaSun /> : <FaMoon />}
-                    </button>
+                        <motion.div
+                            layout
+                            transition={{ type: "spring", stiffness: 700, damping: 30 }}
+                            className={`w-5 h-5 rounded-full bg-yellow-400 dark:bg-indigo-500 shadow-md`}
+                            style={{
+                                x: darkMode ? 28 : 0,
+                            }}
+                        />
+                        <div className="absolute inset-0 flex justify-between items-center px-1 text-xs text-gray-600 dark:text-gray-300">
+                            <FaMoon className="text-sm" />
+                            <FaSun className="text-sm" />
+                        </div>
+                    </motion.button>
                 </div>
 
-                {/* Mobile Hamburger */}
-                <button
-                    className="md:hidden text-2xl text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-700 rounded-md p-1"
-                    onClick={() => setOpen(!open)}
-                >
-                    {open ? "✕" : <TiThMenu />}
-                </button>
+                {/* Mobile Hamburger + Toggle */}
+                <div className="flex md:hidden items-center gap-2">
+                    {/* Animated Mobile Dark Mode Toggle */}
+                    <motion.button
+                        onClick={() => setDarkMode(!darkMode)}
+                        className="relative w-12 h-6 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center p-1 cursor-pointer"
+                        layout
+                    >
+                        <motion.div
+                            layout
+                            transition={{ type: "spring", stiffness: 700, damping: 30 }}
+                            className="w-4 h-4 rounded-full bg-yellow-400 dark:bg-indigo-500 shadow-md"
+                            style={{ x: darkMode ? 24 : 0 }}
+                        />
+                        <div className="absolute inset-0 flex justify-between items-center px-1 text-xs text-gray-600 dark:text-gray-300">
+                            <FaMoon className="text-sm" />
+                            <FaSun className="text-sm" />
+                        </div>
+                    </motion.button>
+
+                    {/* Hamburger */}
+                    <button
+                        className="text-2xl text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-700 rounded-md p-1"
+                        onClick={() => setOpen(!open)}
+                    >
+                        {open ? "✕" : <TiThMenu />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Menu */}
@@ -199,12 +132,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: -20, opacity: 0 }}
                         transition={{ duration: 0.25 }}
-                        className="md:hidden absolute top-full left-0 w-full 
-            bg-white dark:bg-gray-900 
-            border-t border-gray-200 dark:border-gray-800
-            backdrop-blur-lg shadow-xl 
-            flex flex-col items-center gap-6 py-8 
-            font-medium text-gray-800 dark:text-gray-200"
+                        className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 backdrop-blur-lg shadow-xl flex flex-col items-center gap-6 py-8 font-medium text-gray-800 dark:text-gray-200"
                     >
                         {sections.map((section) => {
                             const label =
@@ -213,7 +141,6 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                                     : section === "aboutMe"
                                         ? "About"
                                         : section.charAt(0).toUpperCase() + section.slice(1);
-
                             return (
                                 <a
                                     key={section}
@@ -225,13 +152,6 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                                 </a>
                             );
                         })}
-
-                        <button
-                            onClick={() => setDarkMode(!darkMode)}
-                            className="mt-2 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-yellow-400 transition"
-                        >
-                            {darkMode ? <FaSun /> : <FaMoon />}
-                        </button>
                     </motion.div>
                 )}
             </AnimatePresence>
