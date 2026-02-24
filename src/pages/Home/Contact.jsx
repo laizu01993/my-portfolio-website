@@ -10,7 +10,7 @@ const Contact = () => {
     return (
         <section
             id="contact"
-            className="min-h-screen flex flex-col justify-center items-center text-center px-4 md:px-20 bg-gradient-to-b from-indigo-100 to-white dark:from-gray-900 dark:to-gray-800"
+            className="min-h-screen flex flex-col justify-center items-center text-center px-4 md:px-20 bg-linear-to-b from-indigo-100 to-white dark:from-gray-900 dark:to-gray-800"
         >
             {/* Section Title */}
             <motion.h2
