@@ -229,7 +229,7 @@ const ProjectCard = ({ project }) => {
 // -----------------------------
 const Projects = () => {
     return (
-        <section className="py-16 bg-linear-to-b from-indigo-50 to-white dark:from-gray-900 dark:to-gray-800">
+        <section id="projects" className="py-16 bg-linear-to-b from-indigo-50 to-white dark:from-gray-900 dark:to-gray-800">
             <div className="max-w-6xl mx-auto px-4">
                 <motion.h2
                     initial={{ opacity: 0, y: 30 }}
