@@ -33,7 +33,7 @@ const projects = [
             "Recharts",
         ],
         live: "https://xyz-asset-management.vercel.app",
-        github: "https://github.com/your-github/xyz-asset-management",
+        github: "https://github.com/laizu01993/xyz-asset-management-client",
     },
     {
         title: "🍽️ Bistro Boss",
@@ -193,7 +193,7 @@ const ProjectCard = ({ project }) => {
                     {project.tech.map((t, i) => (
                         <span
                             key={i}
-                            className="text-sm px-3 py-1 rounded-full bg-gradient-to-r from-indigo-100 to-indigo-200 dark:from-indigo-700 dark:to-indigo-600 text-indigo-800 dark:text-white hover:scale-105 transition"
+                            className="text-sm px-3 py-1 rounded-full bg-linear-to-r from-indigo-100 to-indigo-200 dark:from-indigo-700 dark:to-indigo-600 text-indigo-800 dark:text-white hover:scale-105 transition"
                         >
                             {t}
                         </span>
