@@ -137,8 +137,8 @@ import Skills from "./Skills";
 const Home = () => {
   const handleResumeDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Shahanara_Aktar_Resume.pdf";
-    link.download = "Shahanara_Aktar_Resume.pdf";
+    link.href = "/Shahanara_Aktar_Resume_2026.pdf";
+    link.download = "Shahanara_Aktar_Resume_2026.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
