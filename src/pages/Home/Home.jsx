@@ -103,7 +103,7 @@ const Home = () => {
             <FaLinkedin />
           </motion.a>
           <motion.a
-            href="mailto:laizuaktar6@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=laizuaktar6@gmail.com"
             whileHover={{ scale: 1.2, color: "#D44638" }}
             className="transition-colors"
           >
